@@ -9,6 +9,7 @@ export const composer = ({context}, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
+  register: actions.register.registerUser,
   context: () => context
 });
 

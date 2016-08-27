@@ -13,12 +13,12 @@ export default function (injectDeps, {FlowRouter}) {
   function checkUserLoggedIn( ctx, redirect) {
     let route = FlowRouter.current();
     console.log(route.route.name);
-    if (Meteor.userId) {
+    if (Meteor.userId()) {
       console.log("user exist!");
       if(route.route.name !== 'test'){
         FlowRouter.go('/test');
       } else {
-
+ß
       }
     } else {
       console.log("user does not exist!");
