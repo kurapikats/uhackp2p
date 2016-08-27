@@ -6,12 +6,12 @@ import ApiView from './containers/api_view';
 export default function (injectDeps, {FlowRouter}) {
 	const MainLayoutCtx = injectDeps(MainLayout);
 	
-/*	FlowRouter.route('/api', {
-		name: '',
+	FlowRouter.route('/api', {
+		name: 'api',
 		action() {
 			mount(MainLayoutCtx, {
 				content: () => (<ApiView />)
 			});
 		}
-	});*/
+	});
 }

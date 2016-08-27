@@ -25,3 +25,4 @@ http                          # Make HTTP calls to remote servers
 random
 digilord:faker
 accounts-password
+percolate:migrations
