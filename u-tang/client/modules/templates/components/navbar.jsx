@@ -13,7 +13,7 @@ export default React.createClass({
     return (
       <AppBar
         title={title}
-        style={{position: 'fixed'}}
+        style={{position: 'relative'}}
         iconElementRight={<NavBarRight />}
       />
     );

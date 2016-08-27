@@ -1,4 +1,7 @@
 import React from 'react';
+import { TextField, RaisedButton, Paper, Divider } from 'material-ui';
+import { ContentSave }  from 'material-ui/svg-icons';
+import EnrollList from '../containers/enroll_list.js';
 
 class Enroll extends React.Component {
   constructor(props) {
@@ -34,20 +37,34 @@ class Enroll extends React.Component {
 
   render() {
     return (
-      <section className="Enroll">
-        <div> Enroll Page </div>
+      <div className="Enroll">
+        <h4>Enroll Third Party Account</h4>
 
-        <labe>User ID:</labe>
-        <input name="user-id" type="text" placeholder="User ID" onChange={this._update.bind(this)}/>
-        <br/>
+        <TextField
+          ref="accountNo"
+          name="accountNo"
+          hintText="Account No."
+          floatingLabelText="Account No."
+          className="inputLeftMargin"
+          fullWidth={true}
+          underlineShow={true}
+          required
+        />
 
-        <labe>Card ID:</labe>
-        <input name="card-id"  type="text" placeholder="Card ID" onChange={this._update.bind(this)}/>
-        <br/>
+        <RaisedButton
+          type="submit"
+          label="Save"
+          primary={true}
+          style={{marginRight: 10}}
+          labelPosition="before"
+          icon={<ContentSave/>}
+        />
 
-        <button onClick={this._add.bind(this)}> Submit </button>
+        <br/><br/>
+        <Divider />
 
-      </section>
+        <EnrollList />
+      </div>
     );
   }
 }
