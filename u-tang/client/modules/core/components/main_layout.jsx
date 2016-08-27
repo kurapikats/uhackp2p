@@ -1,11 +1,4 @@
 import React from 'react';
-
-const Layout = ({content = () => null }) => (
-  <div>
-    <div>
-      {content()}
-    </div>
-  </div>
-);
+import Layout from '/client/modules/templates/components/layout.jsx';
 
 export default Layout;
