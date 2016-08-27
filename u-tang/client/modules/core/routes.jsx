@@ -6,10 +6,8 @@ import Home from './components/home.jsx';
 import Login from './containers/login';
 import Register from './containers/register';
 //import {publicRoutes,authenticatedRoutes} from '../../configs/auth/authentication';
-
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
-
   function checkUserLoggedIn( ctx, redirect) {
     let route = FlowRouter.current();
     console.log(route.route.name);
@@ -29,14 +27,12 @@ export default function (injectDeps, {FlowRouter}) {
       }
     }
   }
-
   FlowRouter.route('/', {
     name: 'home',
     action() {
       FlowRouter.go('/login');
     }
   });
-
   FlowRouter.route('/login', {
     name: 'login',
     triggersEnter: [checkUserLoggedIn],

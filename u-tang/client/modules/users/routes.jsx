@@ -9,7 +9,6 @@ import MainLayout from '/client/modules/core/components/main_layout.jsx';
 import Dashboard from './containers/dashboard';
 import Profile from './containers/profile'
 import { LayoutDefault, NotFound } from '/client/configs/components.js';
-import Profile from './containers/profile';
 import Enroll from './containers/enroll';
 import EnrollList from './containers/enroll_list';
 
