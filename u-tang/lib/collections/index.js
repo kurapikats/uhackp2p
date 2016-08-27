@@ -1,3 +1,5 @@
+import AccountInfo from './account_info';
+
 export {
-  undefined
+  AccountInfo
 };
