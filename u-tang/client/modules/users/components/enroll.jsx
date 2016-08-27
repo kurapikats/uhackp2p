@@ -28,6 +28,7 @@ class Enroll extends React.Component {
       cardId: this.state.cardId
     };
 
+    this.props.enroll(data);
     console.log(data);
   }
 
