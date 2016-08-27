@@ -1,19 +1,24 @@
+/**
+ * Material-UI Theme Layout Container
+ *
+ * @author Jesus B. Nana <09178816360>
+ *
+ */
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 
-import Register from '../components/register.jsx';
+import Layout from '../components/layout.jsx';
 
 export const composer = ({context}, onData) => {
-  const {Meteor, Collections, LocalState} = context();
-  let error = LocalState.get('REGISTER_ERROR');
-  onData(null, {error});
+  const {Meteor, Collections} = context();
+
+  onData(null, {});
 };
 
 export const depsMapper = (context, actions) => ({
-  register: actions.register.registerUser,
   context: () => context
 });
 
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(Register);
+)(Layout);
