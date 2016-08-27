@@ -1,12 +1,16 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 
-import Profile from '../components/profile.jsx';
+import EnrollList from '../components/enroll_list.jsx';
 
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
-  let data = Meteor.user();
-  console.log(data);
-  if(data){
+  let data = [];
+
+  if(Meteor.subscribe('get.enroll').ready()){
+    Collections.Enroll.find().forEach((enroll)=>{
+      data.push(enroll);
+    });
+    console.log(data);
     onData(null, {data});
   }
 };
@@ -18,4 +22,4 @@ export const depsMapper = (context, actions) => ({
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(Profile);
+)(EnrollList);

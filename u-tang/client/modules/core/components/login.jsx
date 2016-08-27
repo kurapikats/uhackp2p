@@ -13,6 +13,8 @@ class Login extends React.Component {
     let val = e.currentTarget.value;
     let type = e.currentTarget.type;
 
+    console.log(val,type);
+
     switch(type){
       case 'email':
         this.setState({email: val});

@@ -1,21 +1,19 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 
-import Profile from '../components/profile.jsx';
+import Enroll from '../components/enroll.jsx';
 
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
-  let data = Meteor.user();
-  console.log(data);
-  if(data){
-    onData(null, {data});
-  }
+
+  onData(null, {});
 };
 
 export const depsMapper = (context, actions) => ({
+  enroll: actions.enroll.enroll,
   context: () => context
 });
 
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(Profile);
+)(Enroll);
