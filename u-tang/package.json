@@ -4,17 +4,22 @@
   "description": "u-tang",
   "scripts": {
     "test": "mocha .scripts/mocha_boot.js client/**/tests/**/*.js --compilers js:babel-core/register",
-    "storybook": "start-storybook -p 9001"
+    "storybook": "start-storybook -p 9001",
+    "start": "meteor"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/username/reponame.git"
+    "url": "git+https://github.com/kurapikats/uhackp2p.git"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "formsy-material-ui": "0.4.3",
+    "formsy-react": "0.18.0",
+    "formsy-react-components": "0.7.1",
     "mantra-core": "^1.7.0",
     "material-ui": "^0.15.4",
+    "moment": "^2.14.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-komposer": "^1.13.1",
