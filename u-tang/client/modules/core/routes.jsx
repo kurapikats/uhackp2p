@@ -15,10 +15,10 @@ export default function (injectDeps, {FlowRouter}) {
     console.log(route.route.name);
     if (Meteor.userId()) {
       console.log("user exist!");
-      if(route.route.name !== 'test'){
-        FlowRouter.go('/test');
+      if(route.route.name !== 'dashboard'){
+        FlowRouter.go('/dashboard');
       } else {
-ß
+
       }
     } else {
       console.log("user does not exist!");
