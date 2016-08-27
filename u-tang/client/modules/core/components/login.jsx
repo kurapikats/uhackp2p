@@ -9,12 +9,12 @@ class Login extends React.Component {
     let {error} = this.props;
     return (
       <section className="login-page">
-        {error ?
-        <div className="error-message">
-          {error}
-        </div> : null
-        }
         <div> Login Page </div>
+        {error ?
+          <div className="error-message">
+            {error}
+          </div> : null
+        }
       </section>
     );
   }

@@ -3,9 +3,9 @@ import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 import Register from '../components/register.jsx';
 
 export const composer = ({context}, onData) => {
-  const {Meteor, Collections} = context();
-
-  onData(null, {});
+  const {Meteor, Collections, LocalState} = context();
+  let error = LocalState.get('REGISTER_ERROR');
+  onData(null, {error});
 };
 
 export const depsMapper = (context, actions) => ({

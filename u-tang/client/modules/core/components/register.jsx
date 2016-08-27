@@ -6,10 +6,13 @@ class Register extends React.Component {
   }
 
   render() {
+    let {error} = this.props;
     return (
-      <div>
-        Register
-      </div>
+      <section className="register-page">
+        <div> Register Page</div>
+        {error? <div className="error-message" > {error}
+        </div> : null}
+      </section>
     );
   }
 }
