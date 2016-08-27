@@ -5,6 +5,7 @@ import MainLayout from '/client/modules/core/components/main_layout.jsx';
 import Dashboard from './containers/dashboard';
 import Profile from './containers/profile';
 import Enroll from './containers/enroll';
+import EnrollList from './containers/enroll_list';
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
@@ -50,6 +51,16 @@ export default function (injectDeps, {FlowRouter}) {
     action(){
       mount(MainLayoutCtx, {
         content: ()=> (<Enroll />)
+      })
+    }
+  });
+
+  FlowRouter.route('/enroll-list',{
+    name: 'enroll',
+    triggersEnter: [checkUserLoggedIn],
+    action(){
+      mount(MainLayoutCtx, {
+        content: ()=> (<EnrollList />)
       })
     }
   });
