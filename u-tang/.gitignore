@@ -1,1 +1,11 @@
-node_modules
+node_modules/
+uploads/
+.meteor/local
+.DS_Store
+**/.DS_Store
+**/**/.DS_Store
+npm-debug.log
+.idea
+.editorconfig
+**/._*
+.git.bak/
