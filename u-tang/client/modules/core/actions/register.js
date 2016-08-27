@@ -5,8 +5,8 @@ export default {
 			if(error){
 				LocalState.set('REGISTER_ERROR', error.reason)
 			} else {
+				console.log(data);
 				FlowRouter.go('/dashboard');
-				console.log(data)
 			}
 		})
   }
