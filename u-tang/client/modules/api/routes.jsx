@@ -6,12 +6,12 @@ import MainLayout from '/client/modules/core/components/main_layout.jsx';
 export default function (injectDeps, {FlowRouter}) {
 	const MainLayoutCtx = injectDeps(MainLayout);
 	
-	FlowRouter.route('/api', {
+/*	FlowRouter.route('/api', {
 		name: '',
 		action() {
 			mount(MainLayoutCtx, {
 				content: () => (< />)
 			});
 		}
-	});
+	});*/
 }

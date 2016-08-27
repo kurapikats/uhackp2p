@@ -6,10 +6,16 @@ class Login extends React.Component {
   }
 
   render() {
+    let {error} = this.props;
     return (
-      <div>
-        Login
-      </div>
+      <section className="login-page">
+        <div> Login Page </div>
+        {error ?
+          <div className="error-message">
+            {error}
+          </div> : null
+        }
+      </section>
     );
   }
 }
