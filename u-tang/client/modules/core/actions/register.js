@@ -3,10 +3,10 @@ export default {
 	  console.log(data);
 		Meteor.call('users.add', data, (error, data)=>{
 			if(error){
-				LocalState.set('REGISTER_ERROR', error)
+				LocalState.set('REGISTER_ERROR', error.reason)
 			} else {
 				//FlowRouter.go('')
-				console.log(data,error)
+				console.log(data)
 			}
 		})
   }
