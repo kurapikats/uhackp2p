@@ -2,13 +2,13 @@ import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 
 import ApiView from '../components/api_view.jsx';
 
-export const composer = ({context}, onData) => {
+export const composer = ({context,accountNo='000000014850'}, onData) => {
   const {Meteor, Collections} = context();
 	const subscriptionReady = [Meteor.subscribe('accountInfo').ready];
 	if(subscriptionReady){
-		console.log(Collections.AccountInfo.find().fetch());
-		
-		onData(null, {});
+		const selector ={account_no:accountNo};
+		const accountInfo = Collections.AccountInfo.findOne(selector);
+		onData(null, {accountInfo});
 	}else {
 		onData()
 	}

@@ -5,7 +5,6 @@ import {updateAccounts} from '/lib/methods/accountInfo';
 const url = 'https://api.us.apiconnect.ibmcloud.com/ubpapi-dev/sb/api/RESTs';
 const options = {
 	headers: {
-		"User-Agent": "U-Tang/1.0",
 		'accept': 'application/json',
 		'content-type': 'application/json',
 		'x-ibm-client-secret': 'cW0iC1rW3kO3jE6mU3kR3eJ1uB6lA6uN0bH7qX3bX2bE1mG0pA',
@@ -16,7 +15,6 @@ const getAccounts = (accountNo = '000000014850')=> {
 	console.log('Getting account');
 	options.query = 'account_no=' + accountNo;
 	HTTP.get(url + '/getAccount', options,(err,res)=>{
-		console.log(err,res);
 		(res)?(res.data)?updateAccounts(res.data):'':'';
 	});
 };

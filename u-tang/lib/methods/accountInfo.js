@@ -25,7 +25,5 @@ const updateAccounts = (accountInfo)=> {
 			});
 		}
 	}
-	
-	console.log(AccountInfo.find().fetch());
 };
 export {updateAccounts};

@@ -23,6 +23,9 @@ class ApiView extends React.Component {
 	}
 	
 	render() {
+		const accountInfo =this.props.accountInfo;
+		console.log(accountInfo);
+		
 		return (
 			<div>
 				ApiView
