@@ -6,6 +6,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import NavBar from './navbar.jsx';
 
 export default class Layout extends Component {
   render() {
@@ -13,6 +14,9 @@ export default class Layout extends Component {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div>
+          <div className="top" style={{margin:0}}>
+            <NavBar title={'P2P-Utang'} />
+          </div>
           <div className='middle'>
             <div className='content'>
               { content() }

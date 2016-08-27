@@ -17,3 +17,7 @@ app.loadModule(usersModule);
 app.loadModule(apiModule);
 app.loadModule(templatesModule);
 app.init();
+
+// fix for material-ui touch-tap events
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
