@@ -5,20 +5,19 @@ import MainLayout from './components/main_layout.jsx';
 import Home from './components/home.jsx';
 import Login from './containers/login';
 import Register from './containers/register';
-
+import {publicRoutes,authenticatedRoutes} from '../../configs/auth/authentication';
 export default function (injectDeps, {FlowRouter}) {
+  console.log(publicRoutes, authenticatedRoutes);
   const MainLayoutCtx = injectDeps(MainLayout);
 
-  FlowRouter.route('/', {
+  publicRoutes.route('/', {
     name: 'home',
     action() {
       FlowRouter.go('/login');
-      mount(MainLayoutCtx, {
-      });
     }
   });
 
-  FlowRouter.route('/login', {
+  publicRoutes.route('/login', {
     name: 'login',
     action() {
       mount(MainLayoutCtx, {
@@ -28,7 +27,7 @@ export default function (injectDeps, {FlowRouter}) {
   });
 
 
-  FlowRouter.route('/register', {
+  publicRoutes.route('/register', {
     name: 'register',
     action() {
       mount(MainLayoutCtx, {
@@ -36,4 +35,16 @@ export default function (injectDeps, {FlowRouter}) {
       });
     }
   });
+
+  authenticatedRoutes.route('/test',{
+    name: 'test',
+    action(){
+      mount(MainLayoutCtx, {
+
+      })
+    },
+    triggersEnter: [function(context, redirect) {
+      console.log('running /admin trigger');
+    }]
+  })
 }
