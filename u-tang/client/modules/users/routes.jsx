@@ -1,9 +1,14 @@
+/**
+ * Users Module Routes
+ *
+ * @author Jesus B. Nana <09178816360>
+ */
 import React from 'react';
-import {mount} from 'react-mounter';
-
+import { mount } from 'react-mounter';
 import MainLayout from '/client/modules/core/components/main_layout.jsx';
 import Dashboard from './containers/dashboard';
 import Profile from './containers/profile'
+import { LayoutDefault, NotFound } from '/client/configs/components.js';
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
@@ -53,4 +58,64 @@ export default function (injectDeps, {FlowRouter}) {
   //     });
   //   }
   // });
+
+  FlowRouter.route('/users', {
+    name: 'viewUsers',
+    action() {
+      mount(LayoutDefault, {
+        LayoutDefault, content: () => (<ViewDomain domainId={domainId} />)
+      });
+    }
+  });
+
 }
+
+/////
+//
+//
+// import ListDomains from './containers/listDomains';
+// import ViewDomain from './containers/viewDomain';
+// import NewDomain from './containers/newDomain';
+// import EditDomain from './containers/editDomain';
+//
+// import {adminGroupRoute} from '../core/routes';
+//
+// export default function (injectDeps, {FlowRouter}) {
+//   const AuthCheckCtx = injectDeps(AuthCheck);
+//
+//   adminGroupRoute.route('/domain/new', {
+//     name: 'newDomain',
+//     action() {
+//       mount(AuthCheckCtx, {
+//         LayoutDefault, content: () => (<NewDomain />)
+//       });
+//     }
+//   });
+//
+//   adminGroupRoute.route('/domain/:domainId', {
+//     name: 'viewDomain',
+//     action({domainId}) {
+//       mount(AuthCheckCtx, {
+//         LayoutDefault, content: () => (<ViewDomain domainId={domainId} />)
+//       });
+//     }
+//   });
+//
+//   adminGroupRoute.route('/domain/edit/:domainId', {
+//     name: 'editDomain',
+//     action({domainId}) {
+//       mount(AuthCheckCtx, {
+//         LayoutDefault, content: () => (<EditDomain domainId={domainId} />)
+//       });
+//     }
+//   });
+//
+//   adminGroupRoute.route('/domains', {
+//     name: 'listDomains',
+//     action() {
+//       mount(AuthCheckCtx, {
+//         LayoutDefault, content: () => (<ListDomains />)
+//       });
+//     }
+//   });
+// }
