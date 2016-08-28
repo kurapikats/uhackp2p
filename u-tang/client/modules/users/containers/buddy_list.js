@@ -10,7 +10,8 @@ export const composer = ({context}, onData) => {
 };
 
 export const depsMapper = (context, actions) => ({
-  context: () => context
+  context: () => context,
+	sendRequest: actions.buddies.sendRequest
 });
 
 export default composeAll(

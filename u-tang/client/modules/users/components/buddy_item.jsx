@@ -37,6 +37,7 @@ class BuddyItem extends React.Component {
 			amount: this.state.amount
 		};
 
+		this.props.sendRequest(data);
 		console.log(data);
 	};
 	

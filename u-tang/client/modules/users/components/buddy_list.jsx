@@ -8,12 +8,13 @@ class BuddyList extends React.Component {
 
 	render() {
 		const buddyList = this.props.buddyList;
+		const {sendRequest} = this.props;
 		console.log(buddyList);
 		return (
 			<section>
 				<div>Buddylist</div>
 				{buddyList.map((buddy, index)=>
-					<BuddyItem key={index} buddy={buddy}/>
+					<BuddyItem key={index} buddy={buddy} sendRequest={sendRequest}/>
 				)}
 			</section>
 		);

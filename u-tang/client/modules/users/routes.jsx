@@ -10,6 +10,7 @@ import Dashboard from './containers/dashboard';
 import Profile from './containers/profile';
 import Enroll from './containers/enroll';
 import BuddyList from './containers/buddy_list';
+import Borrowers from './containers/borrowers';
 export default function (injectDeps, {FlowRouter}) {
 	const MainLayoutCtx = injectDeps(MainLayout);
 	

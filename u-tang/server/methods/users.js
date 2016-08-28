@@ -24,11 +24,13 @@ export default function () {
 			return id;
 		},
 
-		'user.request'(data){
+		'user.request'(data,userId,status){
 			let id = Request.insert({
+				userId: userId,
 				targetId: data.buddy,
 				message: data.message,
-				amount: data.amount
+				amount: data.amount,
+				status: status
 			});
 			return id
 		}
