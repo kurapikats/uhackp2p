@@ -35,18 +35,11 @@ class BuddyItem extends React.Component {
 			<Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
 				<CardHeader
 					title={buddy.firstName+' '+buddy.lastName}
-					subtitle="Subtitle"
 					avatar={buddy.displayPhoto}
 					actAsExpander={true}
-					showExpandableButton={true}
 				/>
 				<CardText>
-					<Toggle
-						toggled={this.state.expanded}
-						onToggle={this.handleToggle}
-						labelPosition="right"
-						label="This toggle controls the expanded state of the component."
-					/>
+				
 				</CardText>
 				<CardMedia
 					expandable={true}
@@ -62,8 +55,10 @@ class BuddyItem extends React.Component {
 					Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
 				</CardText>
 				<CardActions>
-					<FlatButton label="Expand" onTouchTap={this.handleExpand}/>
-					<FlatButton label="Reduce" onTouchTap={this.handleReduce}/>
+					{(!this.state.expanded)?
+						<FlatButton label="More info" onTouchTap={this.handleExpand}/>:
+						<FlatButton label="close" onTouchTap={this.handleReduce}/>
+					}
 				</CardActions>
 			</Card>
 		);
