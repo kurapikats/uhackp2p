@@ -4,6 +4,7 @@ import { disable } from 'react-komposer';
 disable();
 
 function loadStories() {
+  require('../client/modules/transactions/components/.stories/index.js');
   require('../client/modules/templates/components/.stories/index.js');
   require('../client/modules/api/components/.stories/index.js');
   // require as many as stories you need.

@@ -6,6 +6,7 @@ import coreModule from './modules/core';
 import usersModule from './modules/users';
 import apiModule from './modules/api';
 import templatesModule from './modules/templates';
+import transactionsModule from './modules/transactions';
 
 // init context
 const context = initContext();
@@ -16,6 +17,7 @@ app.loadModule(coreModule);
 app.loadModule(usersModule);
 app.loadModule(apiModule);
 app.loadModule(templatesModule);
+app.loadModule(transactionsModule);
 app.init();
 
 // fix for material-ui touch-tap events

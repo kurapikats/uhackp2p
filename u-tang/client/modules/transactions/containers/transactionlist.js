@@ -1,25 +1,20 @@
 import {useDeps, composeAll, composeWithTracker, compose} from 'mantra-core';
 
-import EnrollList from '../components/enroll_list.jsx';
+import Transactionlist from '../components/transactionlist.jsx';
 
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
-  let data = [];
-
-  if(Meteor.subscribe('get.enroll').ready()){
-    Collections.Enroll.find().forEach((enroll)=>{
-      data.push(enroll);
-    });
-    //console.log(data);
-    onData(null, {data});
-  }
+	const selector = {};
+	const transactions = Collections.Transactions.find(selector).fetch();
+	console.log(transactions);
+  onData(null, {transactions});
 };
 
 export const depsMapper = (context, actions) => ({
-  context:() => context
+  context: () => context
 });
 
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(EnrollList);
+)(Transactionlist);
