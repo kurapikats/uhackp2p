@@ -80,7 +80,7 @@ export default function (injectDeps, {FlowRouter}) {
 			})
 		}
 	});
-	FlowRouter.route('/pending',{
+	FlowRouter.route('/pending', {
 		name: 'pending',
 		triggersEnter: [checkUserLoggedIn],
 		action(){
@@ -89,7 +89,7 @@ export default function (injectDeps, {FlowRouter}) {
 			})
 		}
 	});
-	FlowRouter.route('/borrowers',{
+	FlowRouter.route('/borrowers', {
 		name: 'borrowers',
 		triggersEnter: [checkUserLoggedIn],
 		action(){
@@ -98,6 +98,4 @@ export default function (injectDeps, {FlowRouter}) {
 			})
 		}
 	});
-	
-	
 }
