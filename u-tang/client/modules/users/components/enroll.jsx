@@ -7,8 +7,7 @@ class Enroll extends React.Component {
   constructor(props) {
     super(props);
     this.state= {
-      userId: null,
-      cardId: null
+      accountNo: null
     }
   }
 
@@ -17,18 +16,15 @@ class Enroll extends React.Component {
     let name = e.currentTarget.name;
 
     switch(name){
-      case 'user-id':
-        this.setState({userId: val});
+      case 'accountNo':
+        this.setState({accountNo: val});
         break;
-      case 'card-id':
-        this.setState({cardId: val})
     }
   }
 
   _add(){
     let data = {
-      userId: this.state.userId,
-      cardId: this.state.cardId
+      accountNo: this.state.accountNo
     };
 
     this.props.enroll(data);
@@ -48,6 +44,7 @@ class Enroll extends React.Component {
           className="inputLeftMargin"
           fullWidth={true}
           underlineShow={true}
+          onChange={this._update.bind(this)}
           required
         />
 
@@ -58,6 +55,7 @@ class Enroll extends React.Component {
           style={{marginRight: 10}}
           labelPosition="before"
           icon={<ContentSave/>}
+          onClick={this._add.bind(this)}
         />
 
         <br/><br/>

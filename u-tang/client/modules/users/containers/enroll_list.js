@@ -10,7 +10,7 @@ export const composer = ({context}, onData) => {
     Collections.Enroll.find().forEach((enroll)=>{
       data.push(enroll);
     });
-    console.log(data);
+    //console.log(data);
     onData(null, {data});
   }
 };

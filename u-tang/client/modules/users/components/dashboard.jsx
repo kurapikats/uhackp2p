@@ -18,7 +18,7 @@ class Dashboard extends React.Component {
   }
 
   goToThirdParty() {
-    FlowRouter.go('/enroll-list');
+    FlowRouter.go('/enroll');
   }
 
   goToBorrowers() {
