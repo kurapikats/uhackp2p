@@ -19,8 +19,7 @@ export default function () {
 
 		'user.enroll'(data){
 			let id = Enroll.insert({
-				userId: data.userId,
-				cardId: data.cardId,
+				accountNo: data.accountNo,
 				date: new Date()
 			});
 			return id;

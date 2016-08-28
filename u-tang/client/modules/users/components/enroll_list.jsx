@@ -20,10 +20,13 @@ class EnrollList extends React.Component {
   }
 
 	generate(data,index){
+		let month= data.date.getMonth()+1;
+		let time = data.date.getFullYear()+"-"+((month < 10)? "0"+month: month)+"-"+data.date.getDate();
+
 		return(
 			<TableRow key={index}>
-        <TableRowColumn>{data.cardId}</TableRowColumn>
-        <TableRowColumn>User {data.userId}</TableRowColumn>
+        <TableRowColumn>{data.accountNo}</TableRowColumn>
+        <TableRowColumn>{time}</TableRowColumn>
         <TableRowColumn>
 					<FlatButton
 						type="submit"
@@ -60,7 +63,7 @@ class EnrollList extends React.Component {
 			    <TableHeader>
 			      <TableRow>
 			        <TableHeaderColumn>Account No.</TableHeaderColumn>
-			        <TableHeaderColumn>Name</TableHeaderColumn>
+			        <TableHeaderColumn>Date</TableHeaderColumn>
 			        <TableHeaderColumn>&nbsp;</TableHeaderColumn>
 			      </TableRow>
 			    </TableHeader>

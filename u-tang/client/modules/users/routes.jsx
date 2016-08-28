@@ -80,6 +80,24 @@ export default function (injectDeps, {FlowRouter}) {
 			})
 		}
 	});
+	FlowRouter.route('/pending',{
+		name: 'pending',
+		triggersEnter: [checkUserLoggedIn],
+		action(){
+			mount(MainLayoutCtx, {
+				content: ()=> (<Pending />)
+			})
+		}
+	});
+	FlowRouter.route('/borrowers',{
+		name: 'borrowers',
+		triggersEnter: [checkUserLoggedIn],
+		action(){
+			mount(MainLayoutCtx, {
+				content: ()=> (<Borrowers />)
+			})
+		}
+	});
 	
 	
 }
