@@ -54,7 +54,7 @@ class EnrollList extends React.Component {
 
 		return (
 			<section className="enroll-list">
-				<h4>List of Enrolled Third Party Accounts</h4>
+				<h4>Your Buddies</h4>
 
 				<Table id="enrollTableAll">
 			    <TableHeader>

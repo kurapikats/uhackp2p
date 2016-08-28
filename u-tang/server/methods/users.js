@@ -10,6 +10,7 @@ export default function () {
 				email: data.email, password: data.password,
 				profile: {
 					cardId: data.cardId
+					
 				},
 				dateCreated: new Date()
 			});

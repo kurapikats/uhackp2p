@@ -12,15 +12,17 @@ Migrations.add({
 		},
 	}
 );
-
 const loadUsers = ()=> {
-	console.log('test', Meteor.users.find().count());
+	console.log('finding users', Meteor.users.find().count());
 	for (let a = Meteor.users.find().count(), card = 14841; a < 10; a++ , card++) {
 		Accounts.createUser({
 			email: faker.internet.email(),
 			password: "password",
 			profile: {
-				cardId: "0000000" + card
+				firstName: faker.name.firstName(),
+				lastName: faker.name.lastName(),
+				displayPhoto: faker.image.avatar(),
+				cardId: "0000000" + card,
 			}
 		});
 		console.log('run', a)
@@ -28,7 +30,7 @@ const loadUsers = ()=> {
 }
 const removeUsers = ()=> {
 	for (let a = Meteor.users.find().count(), card = 14841; a < 10; a++ , card++) {
-		const existingUser = Meteor.users.findOne({cardId: "0000000" + card});
+		const existingUser = Meteor.users.findOne({'profile.cardId': "0000000" + card});
 		if (existingUser) {
 			Meteor.users.remove(existingUser);
 		}
