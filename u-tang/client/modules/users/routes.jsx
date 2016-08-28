@@ -11,6 +11,7 @@ import Profile from './containers/profile';
 import Enroll from './containers/enroll';
 import BuddyList from './containers/buddy_list';
 import Borrowers from './containers/borrowers';
+import Pending from './containers/pending';
 export default function (injectDeps, {FlowRouter}) {
 	const MainLayoutCtx = injectDeps(MainLayout);
 	

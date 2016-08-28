@@ -12,6 +12,9 @@ class Dashboard extends React.Component {
 	constructor(props) {
 		super(props);
 	}
+	componentDidMount(){
+		console.log('did mount');
+	}
 	
 	goToProfile() {
 		FlowRouter.go('/profile');
@@ -26,7 +29,7 @@ class Dashboard extends React.Component {
 	}
 	
 	goToPending() {
-		FlowRouter.go('/pendings');
+		FlowRouter.go('/pending');
 	}
 	
 	goToTransactions() {
@@ -42,11 +45,10 @@ class Dashboard extends React.Component {
 		return (
 			<section className="dashboard">
 				<h4>Dashboard</h4>
-				
 				<List>
-					<ListItem onTouchTap={this.goToProfile} primaryText="My Accounts" leftIcon={<ContentInbox />}/>
+					<ListItem onTouchTap={this.goToProfile} primaryText="My Account" leftIcon={<ContentInbox />}/>
 					<ListItem onTouchTap={this.goToMyBuddies.bind(this)} primaryText="My Buddies" leftIcon={<ActionGrade />}/>
-					<ListItem onTouchTap={this.goToBorrowers} primaryText="List of Borrowers" leftIcon={<ContentSend />}/>
+					<ListItem onTouchTap={this.goToBorrowers} primaryText="Unpaid Loans" leftIcon={<ContentSend />}/>
 					<ListItem onTouchTap={this.goToPending} primaryText="Pending Requests" leftIcon={<ContentDrafts />}/>
 					<ListItem onTouchTap={this.goToTransactions} primaryText="Transaction History" leftIcon={<ContentInbox />}/>
 				</List>

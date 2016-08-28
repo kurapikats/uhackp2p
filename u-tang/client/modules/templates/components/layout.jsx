@@ -15,7 +15,7 @@ export default class Layout extends Component {
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div>
           <div className="top">
-            <NavBar title={'P2P-Utang'} />
+            <NavBar title={'P2P-U-tang'} />
           </div>
           <div className='middle'>
             <div className='content'>

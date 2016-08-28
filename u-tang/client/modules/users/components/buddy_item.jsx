@@ -4,7 +4,6 @@ import {TextField, Dialog, FlatButton} from 'material-ui';
 import Toggle from 'material-ui/Toggle';
 
 class BuddyItem extends React.Component {
-	
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -57,15 +56,12 @@ class BuddyItem extends React.Component {
 	handleToggle = (event, toggle) => {
 		this.setState({expanded: toggle});
 	};
-	
 	handleExpand = () => {
 		this.setState({expanded: true});
 	};
-	
 	handleReduce = () => {
 		this.setState({expanded: false});
 	};
-	
 	render() {
 		const buddy = this.props.buddy.profile;
 		//console.log(buddy);
@@ -77,7 +73,6 @@ class BuddyItem extends React.Component {
 					actAsExpander={true}
 				/>
 				<CardText>
-				
 				</CardText>
 				<CardMedia
 					expandable={true}
