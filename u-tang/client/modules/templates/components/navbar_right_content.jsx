@@ -14,7 +14,6 @@ export default class NavbarRightContent extends React.Component {
   ucFirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
   render() {
     const { user } = this.props;
     const signInLink = <MenuItem primaryText='Sign In' href='/login' leftIcon={<ActionInput/>} />;

@@ -10,7 +10,6 @@ import { NavigationExpandMore, SocialPerson, ActionInput }
 import ActionPower from 'material-ui/svg-icons/action/power-settings-new';
 
 export default class NavbarRightContent extends React.Component {
-
   ucFirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -27,6 +26,7 @@ export default class NavbarRightContent extends React.Component {
     return (
       <div>
         <IconMenu
+	        assa
           anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'right', vertical: 'top'}}
           iconButtonElement={

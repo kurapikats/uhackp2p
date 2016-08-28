@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Pendings extends React.Component {
+class Pending extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,4 +14,4 @@ class Pendings extends React.Component {
   }
 }
 
-export default Pendings;
+export default Pending;

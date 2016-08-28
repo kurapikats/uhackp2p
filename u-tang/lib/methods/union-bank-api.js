@@ -55,7 +55,7 @@ const getATM = ()=> {
 const loanCompute = ()=> {
 };
 const UnionBankAPI = {
-	getAccounts: ()=>getAccounts(),
+	getAccounts: (accountNo)=>getAccounts(accountNo),
 	transfer: ()=>transfer(),
 	payment: ()=>payment(),
 };
