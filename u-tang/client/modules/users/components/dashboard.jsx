@@ -18,7 +18,7 @@ class Dashboard extends React.Component {
   }
 
   goToThirdParty() {
-    FlowRouter.go('/profile');
+    FlowRouter.go('/enroll-list');
   }
 
   goToBorrowers() {
@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
   }
 
   goToPending() {
-    FlowRouter.go('/pendings');
+    FlowRouter.go('/pending');
   }
 
   goToTransactions() {

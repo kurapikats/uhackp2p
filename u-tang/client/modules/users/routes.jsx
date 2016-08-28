@@ -11,6 +11,8 @@ import Profile from './containers/profile';
 //import { LayoutDefault, NotFound } from '/client/configs/components.js';
 import Enroll from './containers/enroll';
 import EnrollList from './containers/enroll_list';
+import Pending from './containers/pendings';
+import Borrowers from './containers/borrowers';
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
@@ -70,6 +72,26 @@ export default function (injectDeps, {FlowRouter}) {
     }
   });
 
+  FlowRouter.route('/pending',{
+    name: 'pending',
+    triggersEnter: [checkUserLoggedIn],
+    action(){
+      mount(MainLayoutCtx, {
+        content: ()=> (<Pending />)
+      })
+    }
+  });
+
+  FlowRouter.route('/borrowers',{
+    name: 'borrowers',
+    triggersEnter: [checkUserLoggedIn],
+    action(){
+      mount(MainLayoutCtx, {
+        content: ()=> (<Borrowers />)
+      })
+    }
+  });
+
 
 
   // FlowRouter.route('', {
@@ -81,14 +103,14 @@ export default function (injectDeps, {FlowRouter}) {
   //   }
   // });
 
-  FlowRouter.route('/users', {
-    name: 'viewUsers',
-    action() {
-      mount(LayoutDefault, {
-        LayoutDefault, content: () => (<ViewDomain domainId={domainId} />)
-      });
-    }
-  });
+  //FlowRouter.route('/users', {
+  //  name: 'viewUsers',
+  //  action() {
+  //    mount(LayoutDefault, {
+  //      LayoutDefault, content: () => (<ViewDomain domainId={domainId} />)
+  //    });
+  //  }
+  //});
 
 }
 
