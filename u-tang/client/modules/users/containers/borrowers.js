@@ -4,10 +4,20 @@ import Borrowers from '../components/borrowers.jsx';
 
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
+  let userId = Meteor.userId();
+  let data = [];
+  if(Meteor.subscribe('get.request',userId).ready()){
+    Collections.Transactions.find({targetId: userId}).forEach((temp)=>{
+      data.push(temp);
+    });
 
-  onData(null, {});
+    console.log(data);
+
+    onData(null, {data});
+  }
+
+
 };
-
 export const depsMapper = (context, actions) => ({
   context: () => context
 });

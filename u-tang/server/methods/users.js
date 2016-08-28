@@ -1,4 +1,4 @@
-import {Pending} from '/lib/collections';
+import {Transactions} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 import {Enroll} from '/lib/collections';
@@ -25,7 +25,7 @@ export default function () {
 		},
 
 		'user.request'(data,userId,status){
-			let id = Pending.insert({
+			let id = Transactions.insert({
 				userId: userId,
 				targetId: data.buddy,
 				message: data.message,
