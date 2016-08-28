@@ -1,4 +1,4 @@
-import {Users} from '/lib/collections';
+import {Request} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 import {Enroll} from '/lib/collections';
@@ -10,7 +10,6 @@ export default function () {
 				email: data.email, password: data.password,
 				profile: {
 					cardId: data.cardId
-					
 				},
 				dateCreated: new Date()
 			});
@@ -23,6 +22,15 @@ export default function () {
 				date: new Date()
 			});
 			return id;
+		},
+
+		'user.request'(data){
+			let id = Request.insert({
+				targetId: data.buddy,
+				message: data.message,
+				amount: data.amount
+			});
+			return id
 		}
 	});
 }

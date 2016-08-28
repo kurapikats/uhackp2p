@@ -30,8 +30,14 @@ class BuddyItem extends React.Component {
 	}
 
 	send(){
-		const buddy = this.props.buddy.profile;
-		console.log(buddy, this.state);
+		const buddy = this.props.buddy;
+		let data = {
+			buddy: buddy._id,
+			message: this.state.message,
+			amount: this.state.amount
+		};
+
+		console.log(data);
 	};
 	
 	handleExpandChange = (expanded) => {
