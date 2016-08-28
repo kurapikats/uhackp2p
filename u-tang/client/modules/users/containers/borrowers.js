@@ -10,9 +10,7 @@ export const composer = ({context}, onData) => {
     Collections.Transactions.find({targetId: userId}).forEach((temp)=>{
       data.push(temp);
     });
-
     console.log(data);
-
     onData(null, {data});
   }
 
