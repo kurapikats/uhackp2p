@@ -4,7 +4,7 @@ import BuddyList from '../components/buddy_list.jsx';
 
 export const composer = ({context}, onData) => {
   const {Meteor, Collections} = context();
-	const buddyList = Meteor.users.find().fetch();
+	const buddyList = Meteor.users.find({_id: {$ne:Meteor.userId()}}).fetch();
 	console.log(buddyList);
   onData(null, {buddyList});
 };

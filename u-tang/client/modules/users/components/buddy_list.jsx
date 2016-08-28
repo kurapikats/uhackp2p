@@ -5,8 +5,7 @@ class BuddyList extends React.Component {
 		super(props);
 		
 	}
-	
-	
+
 	render() {
 		const buddyList = this.props.buddyList;
 		console.log(buddyList);

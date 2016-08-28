@@ -43,11 +43,10 @@ class BuddyItem extends React.Component {
 				</CardText>
 				<CardMedia
 					expandable={true}
-					overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle"/>}
+					overlay={<CardTitle title={buddy.firstName+' '+buddy.lastName} subtitle="Overlay subtitle"/>}
 				>
-					<img src="images/nature-600-337.jpg"/>
 				</CardMedia>
-				<CardTitle title="Card title" subtitle="Card subtitle" expandable={true}/>
+				<CardTitle title="Description" subtitle="Card subtitle" expandable={true}/>
 				<CardText expandable={true}>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
